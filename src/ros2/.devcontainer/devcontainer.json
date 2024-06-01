@@ -7,4 +7,24 @@
 	],
 	"workspaceMount": "source=${localWorkspaceFolder},target=/${localWorkspaceFolderBasename},type=bind",
 	"workspaceFolder": "/${localWorkspaceFolderBasename}",
+	"containerEnv": {
+    	"DISPLAY": "${localEnv:DISPLAY}"
+    },
+	"mounts": [
+		{
+			"source": "/tmp/.X11-unix",
+			"target": "/tmp/.X11-unix",
+			"type": "bind"
+		},
+		{
+			"source": "${localEnv:XAUTHORITY:-$HOME/.Xauthority}",
+			"target": "/root/.Xauthority",
+			"type": "bind"
+		},
+		{
+			"source": "ros2-prometheus-bashhistory",
+			"target": "/commandhistory",
+			"type": "volume"
+	}
+    ],
   }
