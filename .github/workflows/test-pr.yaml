@@ -12,8 +12,7 @@ jobs:
         id: filter
         with:
           filters: |
-            color: ./**/color/**
-            hello: ./**/hello/**
+            ros2: ./**/ros2/**
 
   test:
     needs: [detect-changes]

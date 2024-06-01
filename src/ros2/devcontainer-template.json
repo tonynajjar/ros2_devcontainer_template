@@ -1,0 +1,23 @@
+{
+    "id": "ros2",
+    "version": "1.0.0",
+    "name": "ros2 devcontainer template",
+    "description": "A ros2 devcontainer template",
+    "documentationURL": "https://github.com/tonynajjar/ros2_devcontainer_template/tree/main/src/ros2",
+    "licenseURL": "https://github.com/tonynajjar/ros2_devcontainer_template/blob/main/LICENSE",
+    "keywords": ["ros2"],
+    "platforms": ["Any"],
+    "options": {
+        "distro": {
+            "type": "string",
+            "description": "Which ROS2 distro to use. See https://docs.ros.org/en/rolling/Releases.html",
+            "proposals": [
+                "humble",
+                "iron",
+                "jazzy",
+                "rolling"
+              ],
+            "default": "rolling"
+        }
+    }
+}
