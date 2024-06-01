@@ -22,9 +22,9 @@
 			"type": "bind"
 		},
 		{
-			"source": "ros2-prometheus-bashhistory",
+			"source": "bashhistory",
 			"target": "/commandhistory",
 			"type": "volume"
-	}
+		}
     ],
   }
