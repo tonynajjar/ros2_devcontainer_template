@@ -1,6 +1,6 @@
 {
     "id": "ros2",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "name": "ros2 devcontainer template",
     "description": "A ros2 devcontainer template",
     "documentationURL": "https://github.com/tonynajjar/ros2_devcontainer_template/tree/main/src/ros2",
