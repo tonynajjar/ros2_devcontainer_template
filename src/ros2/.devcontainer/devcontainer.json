@@ -1,9 +1,7 @@
 {
 	"name": "${templateOption:distro}",
     "build": {
-        "dockerfile": "Dockerfile",
-        // "context": "..",
-        // "options": ["--ssh=default"]
+        "dockerfile": "Dockerfile"
     },
 	"runArgs": [
 	  "--privileged",

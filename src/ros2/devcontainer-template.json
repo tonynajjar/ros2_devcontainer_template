@@ -8,21 +8,16 @@
     "keywords": ["ros2"],
     "platforms": ["Any"],
     "options": {
-        "distro": {
+        "rosImage": {
             "type": "string",
-            "description": "Which ROS2 distro to use. See https://docs.ros.org/en/rolling/Releases.html",
+            "description": "Which ROS2 distro to use. See https://hub.docker.com/r/osrf/ros/tags for all available tags.",
             "proposals": [
-                "humble",
-                "iron",
-                "jazzy",
-                "rolling"
+                "osrf/ros:rolling-desktop-full",
+                "osrf/ros:jazzy-desktop-full",
+                "osrf/ros:iron-desktop-full",
+                "osrf/ros:humble-desktop-full"
               ],
-            "default": "rolling"
-        },
-        "packageURL": {
-            "type": "string",
-            "description": "URL of the ROS package/repo to clone in the workspace. Leave empty to not clone any package",
-            "default": "https://github.com/ros/robot_state_publisher"
+            "default": "osrf/ros:jazzy-desktop-full"
         }
     }
 }
