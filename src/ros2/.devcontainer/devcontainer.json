@@ -1,6 +1,10 @@
 {
 	"name": "${templateOption:distro}",
-	"dockerFile": "Dockerfile",
+    "build": {
+        "dockerfile": "Dockerfile",
+        // "context": "..",
+        // "options": ["--ssh=default"]
+    },
 	"runArgs": [
 	  "--privileged",
 	  "--network=host"
@@ -8,9 +12,12 @@
 	"workspaceMount": "source=${localWorkspaceFolder},target=/${localWorkspaceFolderBasename},type=bind",
 	"workspaceFolder": "/${localWorkspaceFolderBasename}",
 	"containerEnv": {
+		/* Uncomment to allow the container to access the X server on the host e.g. to run Rviz and other GUI tools
     	"DISPLAY": "${localEnv:DISPLAY}"
+		*/
     },
 	"mounts": [
+		/* Uncomment to allow the container to access the X server on the host e.g. to run Rviz and other GUI tools
 		{
 			"source": "/tmp/.X11-unix",
 			"target": "/tmp/.X11-unix",
@@ -21,10 +28,26 @@
 			"target": "/root/.Xauthority",
 			"type": "bind"
 		},
+		*/
+
+		/* Uncomment to persist bash history between sessions
 		{
-			"source": "bashhistory",
-			"target": "/commandhistory",
-			"type": "volume"
+			"source": "${localEnv:HOME}${localEnv:USERPROFILE}/.bash_history",
+			"target": "/root/.bash_history",
+			"type": "bind"
 		}
+		*/
     ],
+    "customizations": {
+        "vscode": {
+            "settings": {},
+            "extensions": [
+                // "eamodio.gitlens",
+                // "mhutchie.git-graph",
+                // "donjayamanne.githistory",
+                // "ms-python.vscode-pylance",
+                // "ms-python.python"
+              ]
+        }
+    }
   }
