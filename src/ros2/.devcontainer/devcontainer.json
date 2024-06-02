@@ -1,5 +1,5 @@
 {
-	"name": "${templateOption:distro}",
+	"name": "${templateOption:rosImage}",
     "build": {
         "dockerfile": "Dockerfile"
     },
